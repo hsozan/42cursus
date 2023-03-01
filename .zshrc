@@ -2,6 +2,14 @@ alias stay="caffeinate -dismu"
 alias d="cd ~/Desktop"
 alias ua="source ~/.zshrc"
 alias fixvim="mkdir ~/.cache/vim"
+alias ü="clear"
+function ct()
+{
+	cd
+	bash clean.sh
+	fixvim
+	cd -
+}
 function brew_install()
 {
 	cd ~/goinfre
