@@ -20,21 +20,49 @@ echo ""
 if [ -n "$input" ] && [ "$input" = "y" ]; then
     echo "Starting Please Wait...";
     echo "Cleaning ./.Trash/* Please Wait..."
-    rm -rf ./.Trash/*;
+    /bin/rm -rf ./.Trash/*;
     echo "Cleaning ./.cache/* Please Wait..."
-    rm -rf ./.cache/*;
+    /bin/rm -rf ./.cache/*;
     echo "Cleaning ./Library/Caches/* Please Wait..."
-    rm -rf ./Library/Caches/*;
+    /bin/rm -rf ./Library/Caches/*/*;
     echo "Cleaning ./Library/Containers/com.docker.docker/* Please Wait..."
-    rm -rf ./Library/Containers/com.docker.docker/*;
+    /bin/rm -rf ./Library/Containers/com.docker.docker/*;
     echo "Cleaning ./Library/Containers/* Please Wait..."
-    rm -rf ./Library/Containers/*;
+    /bin/rm -rf ./Library/Containers/*;
     echo "Cleaning ./Library/Application Support/Code/User/* Please Wait..."
-    rm -rf ./Library/Application Support/Code/User/*;
+    /bin/rm -rf ./Library/Application Support/Code/User/*;
     echo "Cleaning ./Library/Application Support/Code/CachedData/* Please Wait..."
-    rm -rf ./Library/Application Support/Code/CachedData/*;
+    /bin/rm -rf ./Library/Application Support/Code/CachedData/*;
     echo "Cleaning ./Library/Developer/CoreSimulator/* Please Wait..."
-    rm -rf ./Library/Developer/CoreSimulator/*;
+    /bin/rm -rf ./Library/Developer/CoreSimulator/*;
+	    /bin/rm -rf "$HOME"/Library/*.42* &>/dev/null
+    /bin/rm -rf "$HOME"/*.42* &>/dev/null
+    /bin/rm -rf "$HOME"/.zcompdump* &>/dev/null
+    /bin/rm -rf "$HOME"/.cocoapods.42_cache_bak* &>/dev/null
+    /bin/chmod -R 777 "$HOME"/Library/Caches/Homebrew &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Caches/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Caches/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Slack/Service\ Worker/CacheStorage/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Slack/Cache/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/discord/Cache/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/discord/Code\ Cache/js* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/discord/Crashpad/completed/*  &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Code/Cache/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Code/CachedData/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Code/Crashpad/completed/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Code/User/workspaceStorage/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Profile\ [0-9]/Service\ Worker/CacheStorage/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Default/Service\ Worker/CacheStorage/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Profile\ [0-9]/Application\ Cache/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Default/Application\ Cache/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Crashpad/completed/* &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Chromium/Default/File\ System &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Chromium/Profile\ [0-9]/File\ System &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Default/File\ System &>/dev/null
+    /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Profile\ [0-9]/File\ System &>/dev/null
+    /bin/rm -rf "$HOME"/Desktop/Piscine\ Rules\ *.mp4
+    /bin/rm -rf "$HOME"/Desktop/PLAY_ME.webloc
+    find "$HOME"/Desktop -name .DS_Store -depth -exec /bin/rm {} \; &>/dev/null
     echo "${green}Cache Cleaning Completed."
     else
     echo "There Was an Error.";
